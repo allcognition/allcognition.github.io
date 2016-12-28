@@ -15,7 +15,11 @@
         box-sizing: border-box;
       }
       #body {
-        min-width: 700px;
+        margin: auto;
+        width: 600px;
+      }
+      h3 {
+        text-align: center;
       }
       input {
         display: inline-block;
@@ -24,6 +28,7 @@
         vertical-align: top;
       }
       #chart-body {
+        margin: auto;
         display: inline-block;
       }
       #chart1 {
@@ -69,8 +74,7 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">AllCognition</h1>
-      <h2 class="project-tagline"></h2>
+      <h1 class="project-name">All Cognition</h1>
     </section>
 
     <section class="main-content">
@@ -116,7 +120,7 @@ var col3 = '#eee'
 var _res = 60
 var imprecise = 0
 
-var chart = new Chart(400, 650)
+var chart = new Chart(250, 500)
 window.chart = chart
 
 var curves = {}
@@ -151,7 +155,7 @@ var start = 0
 var end = 1
 var shape = 2/5
 
-$('#input-start').addEventListener("change", function(e){
+$('#input-start').addEventListener("input", function(e){
 
   $('#draw-piecewise').checked = true
   start = +this.value
@@ -159,7 +163,7 @@ $('#input-start').addEventListener("change", function(e){
   chart.lines('line1').render()
 })
 
-$('#input-end').addEventListener("change", function(e){
+$('#input-end').addEventListener("input", function(e){
 
   $('#draw-piecewise').checked = true
   chart.lines('line1').clear()
@@ -169,7 +173,7 @@ $('#input-end').addEventListener("change", function(e){
   chart.lines('line1').render()
 })
 
-$('#input-shape').addEventListener("change", function(e){
+$('#input-shape').addEventListener("input", function(e){
 
   $('#draw-piecewise').checked = true
   chart.lines('line1').clear()
